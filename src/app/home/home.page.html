@@ -1,0 +1,81 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">
+      <img src="/assets/qrcode.png">
+
+      <span>Jaque</span>
+
+      <ion-button color="light" fill="clear" size="small">
+        <ion-icon slot="icon-only" name="arrow-down-outline"></ion-icon>
+      </ion-button>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="primary">
+  <div class="background">
+    <div class="bank-information ion-text-center">
+      <img class="qrcode" src="/assets/qrcode.png">
+
+      <span>Banco <strong>000 - Nu Pagamentos S.A.</strong> </span>
+      <span>Agência <strong>0000 - Nu Pagamentos S.A.</strong> </span>
+      <span>Conta <strong>00000-00 - Nu Pagamentos S.A.</strong> </span>
+
+      <ion-list lines=full>
+        <ion-item *ngFor="let item of items" detail>
+          <ion-icon slot="start" [name]="item.icon"></ion-icon>
+          <ion-label>{{item.text}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <ion-button class="logout" color=light expand="block" fill="outline">
+      Sair da conta
+    </ion-button>
+
+  </div>
+
+  <div class="blocks">
+    <ion-card>
+      <ion-item class="ion-margin-vertical" lines="none">
+        <ion-icon slot="start" name="card-outline"></ion-icon>
+        <ion-label>Cartão de crédito</ion-label>
+      </ion-item>
+
+      <ion-card-content>
+        <div class="cash">
+          <span>Fatura atual</span>
+          <span>R$ 57,55</span>
+          <span>Limite Disponível R$ 2000,00</span>
+        </div>
+
+        <div class="ion-padding-vertical footer">
+          <ion-item detail color="light" lines="none">
+            <ion-icon slot="start" name="pizza-outline"></ion-icon>
+            <ion-label class="ion-text-wrap" >Compra mais recente em Ifood no valor de R$ 3,00</ion-label>
+          </ion-item>
+        </div>
+      </ion-card-content>
+
+    </ion-card>
+
+    
+  </div>
+
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-slides [options]="slidesOptions">
+      <ion-slide *ngFor="let option of options">
+
+        <div class="container ion-text-left">
+          <ion-icon [name]="option.icon"></ion-icon>
+          <span>{{option.text}}</span>
+        </div>
+
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar>
+</ion-footer>
